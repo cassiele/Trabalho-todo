@@ -7,21 +7,16 @@ package br.ufpr.rankeable.dao;
 
 import br.ufpr.rankeable.modelo.Usuario;
 import br.ufpr.rankeable.jdbc.MysqlConnectionFactory;
-
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 /**
  *
  * @author cassi
  */
-public class JdbcUsuarioDao {
+public class JdbcUsuarioDao implements CRUDUsuario {
 
     private Connection connection;
      
@@ -30,6 +25,7 @@ public class JdbcUsuarioDao {
         connection = (new MysqlConnectionFactory()).getConnection();
     }
 
+    @Override
     public boolean existeUsuario(Usuario usuario) throws SQLException {
       String sql = "select * from usuarios where nome = ? and senha = ? ";        
        
@@ -55,5 +51,3 @@ public class JdbcUsuarioDao {
         }     
     }
 }
-//if(userName.equals(request.getParameter("user"))
-//&& passwrd.equals(request.getParameter("pass"))){

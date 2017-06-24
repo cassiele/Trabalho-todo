@@ -5,10 +5,16 @@
  */
 package br.ufpr.rankeable.dao;
 
+import br.ufpr.rankeable.modelo.Rankeavel;
+
 /**
  *
- * @author cassiele
+ * @author ADILSON
  */
 public interface CRUDRankeavel {
+
+    void adiciona(Rankeavel rankeavel);
+
+    void remove(Rankeavel rankeavel);
     
 }

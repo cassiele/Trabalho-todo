@@ -5,10 +5,15 @@
  */
 package br.ufpr.rankeable.dao;
 
+import br.ufpr.rankeable.modelo.Usuario;
+import java.sql.SQLException;
+
 /**
  *
- * @author cassiele
+ * @author ADILSON
  */
 public interface CRUDUsuario {
+
+    boolean existeUsuario(Usuario usuario) throws SQLException;
     
 }

@@ -12,11 +12,11 @@ import java.sql.Connection;
  *
  * @author cassiele
  */
-public class RankingDao {
+public class JdbcRankingDao {
     
      private Connection connection;
     
-     public RankingDao() {
+     public JdbcRankingDao() {
         connection = (new MysqlConnectionFactory()).getConnection();
     }
      

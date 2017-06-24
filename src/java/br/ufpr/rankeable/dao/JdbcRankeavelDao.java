@@ -15,14 +15,15 @@ import java.sql.SQLException;
  *
  * @author cassiele
  */
-public class RankeavelDao {
+public class JdbcRankeavelDao implements CRUDRankeavel {
     
      private Connection connection;
     
-     public RankeavelDao() {
+     public JdbcRankeavelDao() {
         connection = (new MysqlConnectionFactory()).getConnection();
     }
      
+    @Override
     public void adiciona(Rankeavel rankeavel) {
         String sql = "insert into rankeavel " + "(nome, urlRedeSocial, foto) " + "values (?,?,?)";
 
@@ -42,6 +43,7 @@ public class RankeavelDao {
         }
     }
     
+    @Override
      public void remove(Rankeavel rankeavel) {
         String sql = "delete from rankeavel where id = ?";
 
