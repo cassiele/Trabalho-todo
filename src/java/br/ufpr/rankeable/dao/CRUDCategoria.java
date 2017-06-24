@@ -5,14 +5,10 @@
  */
 package br.ufpr.rankeable.dao;
 
-import br.ufpr.rankeable.modelo.Voto;
-
 /**
  *
  * @author cassiele
  */
-public interface VotoDao {
-    
-    void adiciona(Voto voto);
+public interface CRUDCategoria {
     
 }

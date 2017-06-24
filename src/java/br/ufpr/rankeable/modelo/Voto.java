@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ufpr.rankeable.dao;
-
-import br.ufpr.rankeable.modelo.Voto;
+package br.ufpr.rankeable.modelo;
 
 /**
  *
  * @author cassiele
  */
-public interface VotoDao {
-    
-    void adiciona(Voto voto);
+public class Voto {
     
 }
