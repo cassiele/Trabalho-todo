@@ -5,12 +5,20 @@
  */
 package br.ufpr.rankeable.dao;
 
+import br.ufpr.rankeable.jdbc.MysqlConnectionFactory;
+import java.sql.Connection;
+
 /**
  *
  * @author cassiele
  */
-public interface VotoDao {
+public class JdbcVotoDao {
     
+    private Connection connection;
     
-    
+     public JdbcVotoDao() {
+        connection = (new MysqlConnectionFactory()).getConnection();
+    }
+     
+     
 }

@@ -9,8 +9,6 @@ package br.ufpr.rankeable.dao;
  *
  * @author cassiele
  */
-public interface VotoDao {
-    
-    
+public interface CRUDRankeavel {
     
 }
