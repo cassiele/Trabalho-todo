@@ -5,15 +5,10 @@
  */
 package br.ufpr.rankeable.logica;
 
-import br.ufpr.rankeable.modelo.Rankeavel;
-
 /**
  *
- * @author helio
+ * @author cassiele
  */
-public interface PegaRankeaveis {
-    
-    Iterable<Rankeavel> getRankeaveis();
-  
+public interface CadastroCategorias {
     
 }

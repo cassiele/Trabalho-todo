@@ -11,11 +11,7 @@ import br.ufpr.rankeable.modelo.Voto;
  *
  * @author cassiele
  */
-public class LogicaVotos implements InsercaoVotos{
-
-    @Override
-    public void InsereVotos(Voto voto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public interface InsercaoVotos {
     
+    void InsereVotos(Voto voto);
 }
