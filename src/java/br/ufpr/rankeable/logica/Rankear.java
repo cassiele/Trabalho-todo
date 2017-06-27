@@ -11,4 +11,5 @@ package br.ufpr.rankeable.logica;
  */
 public class Rankear {
     
+    
 }

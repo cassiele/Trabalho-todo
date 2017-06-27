@@ -5,10 +5,14 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.modelo.Categoria;
+
 /**
  *
  * @author cassiele
  */
 public interface PegaCategorias {
+    
+    Categoria pegaCategoria();
     
 }

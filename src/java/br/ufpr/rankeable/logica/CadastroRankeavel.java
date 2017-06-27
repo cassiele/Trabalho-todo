@@ -5,10 +5,16 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.modelo.Rankeavel;
+
 /**
  *
  * @author cassiele
  */
 public interface CadastroRankeavel {
     
+    void adicionaRankeavel(Rankeavel rankeavel);
+    void removeRankeavel(Rankeavel rankeavel);
+    void alterarRankeavel(Rankeavel rankeavel);
+
 }
