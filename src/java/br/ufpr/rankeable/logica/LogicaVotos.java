@@ -5,17 +5,28 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.dao.CRUDVotoDao;
 import br.ufpr.rankeable.modelo.Voto;
+import br.ufpr.rankeable.dao.JdbcVotoDao;
 
 /**
  *
  * @author cassiele
  */
 public class LogicaVotos implements InsercaoVotos{
+    
+    private CRUDVotoDao votoDao;
+
+    public LogicaVotos(CRUDVotoDao votoDao) {
+        this.votoDao = votoDao;
+    }
+    
 
     @Override
     public void InsereVotos(Voto voto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        votoDao.inserirVotoDao(voto);
+        
     }
     
 }

@@ -8,12 +8,14 @@ package br.ufpr.rankeable.dao;
 import br.ufpr.rankeable.jdbc.MysqlConnectionFactory;
 import br.ufpr.rankeable.modelo.Voto;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  *
  * @author cassiele
  */
-public class JdbcVotoDao implements VotoDao {
+public class JdbcVotoDao implements CRUDVotoDao {
     
     private Connection connection;
     
@@ -22,9 +24,25 @@ public class JdbcVotoDao implements VotoDao {
     }
 
     @Override
-    public void adiciona(Voto voto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void inserirVotoDao(Voto voto) {
+        String sql = "insert into voto " + "(id_categoria, voto, id_rankeavel) " + "values (???)";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1,voto.getCategoria().getId());
+            stmt.setInt(2,voto.getVoto());
+            stmt.setInt(3,voto.getRankeavel().getId());
+           
+            stmt.execute();
+            stmt.close();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        
     }
-     
-     
+
+  
 }
