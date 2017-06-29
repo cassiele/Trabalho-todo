@@ -20,6 +20,10 @@ public class JdbcCirculoDao implements CRUDCirculo {
     
     private Connection connection;
     
+    public JdbcCirculoDao() {
+        connection = (new MysqlConnectionFactory()).getConnection();
+    }
+    
     @Override
     public void adiciona(Circulo circulo) {
         String sql = "insert into circulo " + "(nome) " + "values (?)";
