@@ -5,10 +5,19 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.modelo.Circulo;
+import br.ufpr.rankeable.modelo.Rankeavel;
+
 /**
  *
  * @author cassiele
  */
-public class CadastroCirculo {
+public interface CadastroCirculo {
+    
+    public void adiciona(Circulo circulo);
+    public void remove(Circulo circulo);
+    public void altera(Circulo circulo);
+    public void vincularRankeavel(Circulo circulo, Rankeavel rankeavel);
+    public void desvincularRankeavel(Circulo circulo, Rankeavel rankeavel); 
     
 }

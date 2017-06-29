@@ -11,7 +11,7 @@ import br.ufpr.rankeable.modelo.Rankeavel;
  *
  * @author helio
  */
-public class LogicaCadastroRankeavel implements PegaRankeaveis {
+public class LogicaCadastroRankeavel implements PegaRankeaveis{
 
     @Override
     public Iterable<Rankeavel> getRankeaveis() {
