@@ -17,11 +17,13 @@ import java.sql.Connection;
 public class teste {
        
     public static void main(String[] args) {
-        Circulo circulo = new Circulo();
-        circulo.setNome("UFPR");
         
-        JdbcCirculoDao circuloDao = new JdbcCirculoDao();
-        circuloDao.adiciona(circulo);                
+        // Testa cadastro de circulo
+        Circulo circulo = new Circulo();
+        circulo.setNome("CVALE");
+             
+        CRUDCirculo dbCirculo = new JdbcCirculoDao();
+        dbCirculo.adiciona(circulo);                
     }    
     
     

@@ -59,6 +59,10 @@ public class Voto {
     public void setRankeavel(Rankeavel rankeavel) {
         this.rankeavel = rankeavel;
     }
+
+    public void inserirVoto(Voto voto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

@@ -5,9 +5,9 @@
  */
 package br.ufpr.rankeable.logica;
 
-import br.ufpr.rankeable.dao.CRUDVotoDao;
 import br.ufpr.rankeable.modelo.Voto;
 import br.ufpr.rankeable.dao.JdbcVotoDao;
+import br.ufpr.rankeable.dao.CRUDVoto;
 
 /**
  *
@@ -15,18 +15,16 @@ import br.ufpr.rankeable.dao.JdbcVotoDao;
  */
 public class LogicaVotos implements InsercaoVotos{
     
-    private CRUDVotoDao votoDao;
+    private CRUDVoto crudVoto;
 
-    public LogicaVotos(CRUDVotoDao votoDao) {
-        this.votoDao = votoDao;
+    public LogicaVotos(CRUDVoto voto) {
+        this.crudVoto = voto;
     }
     
 
     @Override
-    public void InsereVotos(Voto voto) {
-        
-        votoDao.inserirVotoDao(voto);
-        
+    public void InsereVotos(Voto voto) {        
+        crudVoto.inserirVoto(voto);        
     }
     
 }

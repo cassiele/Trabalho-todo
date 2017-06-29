@@ -15,7 +15,7 @@ import java.sql.SQLException;
  *
  * @author cassiele
  */
-public class JdbcVotoDao implements CRUDVotoDao {
+public class JdbcVotoDao implements CRUDVoto {
     
     private Connection connection;
     
@@ -24,7 +24,7 @@ public class JdbcVotoDao implements CRUDVotoDao {
     }
 
     @Override
-    public void inserirVotoDao(Voto voto) {
+    public void inserirVoto(Voto voto) {
         String sql = "insert into voto " + "(id_categoria, voto, id_rankeavel) " + "values (???)";
 
         try {

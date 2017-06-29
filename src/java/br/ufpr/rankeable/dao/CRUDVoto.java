@@ -11,8 +11,8 @@ import br.ufpr.rankeable.modelo.Voto;
  *
  * @author cassiele
  */
-public interface CRUDVotoDao {
+public interface CRUDVoto {
     
-    void inserirVotoDao(Voto voto);
+    void inserirVoto(Voto voto);
     
 }
