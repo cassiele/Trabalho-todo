@@ -27,8 +27,6 @@ public class VotacaoController {
     public VotacaoController(Navegacao navegacao) {
     }
      
-    
-    
     @RequestMapping("/telaVotacao")
     public String telaVotacao(Model model){
         

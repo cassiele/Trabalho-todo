@@ -9,7 +9,10 @@ import br.ufpr.rankeable.jdbc.MysqlConnectionFactory;
 import br.ufpr.rankeable.modelo.Categoria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,7 +28,7 @@ public class JdbcCategoriaDao implements CRUDCategoria {
 
     @Override
     public void adiciona(Categoria categoria) {
-        String sql = "insert into circulo " + "(nome) " + "values (?)";
+        String sql = "insert into categoria " + "(nome) " + "values (?)";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -69,6 +72,48 @@ public class JdbcCategoriaDao implements CRUDCategoria {
             stmt.execute();
             stmt.close();
 
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+    
+    @Override
+    public Categoria buscaPorId(int id) {
+        String sql = "select * from categoria where id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            Categoria categoria = new Categoria();
+            
+            if (rs.next()) {
+                categoria.setId(rs.getInt("id"));
+                categoria.setNome(rs.getString("nome"));
+            }
+            stmt.close();
+            return categoria;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public List<Categoria> lista() {
+        String sql = "select * from categoria";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            List<Categoria> categorias = new ArrayList<Categoria>();
+            while (rs.next()) {
+                Categoria categoria = new Categoria();
+                categoria.setId(rs.getInt("id"));
+                categoria.setNome(rs.getString("nome"));
+                categorias.add(categoria);
+            }
+            stmt.close();
+            return categorias;
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -18,6 +18,10 @@ public class LogicaCirculo implements CadastroCirculo {
 
     private CRUDCirculo circulo;
  
+    public LogicaCirculo() {
+   
+    }
+    
     public LogicaCirculo(CRUDCirculo circulo) {
         this.circulo = circulo;
     }

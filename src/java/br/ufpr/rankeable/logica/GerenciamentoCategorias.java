@@ -5,10 +5,17 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.modelo.Categoria;
+
 /**
  *
  * @author cassiele
  */
-public class GerenciamentoCategorias {
+public class GerenciamentoCategorias implements PegaCategorias {
+
+    @Override
+    public Categoria pegaCategoria() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

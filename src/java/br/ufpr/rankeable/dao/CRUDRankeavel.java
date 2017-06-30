@@ -16,5 +16,7 @@ public interface CRUDRankeavel {
     void adiciona(Rankeavel rankeavel);
 
     void remove(Rankeavel rankeavel);
+
+    public Rankeavel buscaPorId(int id);
     
 }

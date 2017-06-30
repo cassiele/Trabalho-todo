@@ -6,6 +6,7 @@
 package br.ufpr.rankeable.dao;
 
 import br.ufpr.rankeable.modelo.Categoria;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,6 @@ public interface CRUDCategoria {
     public void adiciona(Categoria categoria);
     public void remove(Categoria categoria);
     public void altera(Categoria categoria);
+    public Categoria buscaPorId(int id);
+    public List<Categoria> lista();
 }

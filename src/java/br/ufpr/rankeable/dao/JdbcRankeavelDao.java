@@ -9,6 +9,7 @@ import br.ufpr.rankeable.jdbc.MysqlConnectionFactory;
 import br.ufpr.rankeable.modelo.Rankeavel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -57,7 +58,26 @@ public class JdbcRankeavelDao implements CRUDRankeavel {
             throw new RuntimeException(e);
         }
     }
-     
-     
-    
+
+    @Override
+    public Rankeavel buscaPorId(int id) {    
+        String sql = "select * from rankeavel where id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            Rankeavel rankeavel = new Rankeavel();
+            
+            if (rs.next()) {
+                rankeavel.setId(rs.getInt("id"));
+                rankeavel.setNome(rs.getString("nome"));
+            }
+            stmt.close();
+            return rankeavel;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
 }
+
