@@ -70,5 +70,10 @@ public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,
     public void desvincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void solicitaRemocao(Rankeavel rankeavel) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

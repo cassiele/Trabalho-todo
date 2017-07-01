@@ -17,9 +17,7 @@ public class Rankeavel {
     private String nome;
     private String urlRedeSocial;
     private String foto;
-    
-  //  private List<Voto> votos;
-    //private List<Circulo> circulos;
+    private List<Circulo> circulos;
     
     ///getters e setters
 

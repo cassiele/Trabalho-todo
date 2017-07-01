@@ -6,6 +6,7 @@
 package br.ufpr.rankeable.logica;
 
 import br.ufpr.rankeable.modelo.Categoria;
+import java.util.List;
 
 /**
  *
@@ -16,5 +17,6 @@ public interface CadastroCategorias {
     void adicionaCategoria(Categoria categoria);
     void removeCategoria(Categoria categoria);
     void alteraCategoria(Categoria categoria);
+    List<Categoria> listar(); 
     
 }

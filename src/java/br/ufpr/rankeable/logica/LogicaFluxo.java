@@ -13,7 +13,7 @@ import java.util.Random;
 
 /**
  *
- * @author helio
+ * @author cassi
  */
 public class LogicaFluxo implements Navegacao {
 

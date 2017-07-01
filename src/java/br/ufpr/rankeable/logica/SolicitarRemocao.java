@@ -5,11 +5,13 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.modelo.Rankeavel;
+
 /**
  *
  * @author cassiele
  */
 public interface SolicitarRemocao {
     
-    
+    void solicitaRemocao( Rankeavel rankeavel);
 }

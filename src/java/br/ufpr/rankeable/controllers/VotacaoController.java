@@ -7,6 +7,8 @@ package br.ufpr.rankeable.controllers;
 
 import br.ufpr.rankeable.dao.CRUDCategoria;
 import br.ufpr.rankeable.dao.JdbcCategoriaDao;
+import br.ufpr.rankeable.logica.CadastroCategorias;
+import br.ufpr.rankeable.logica.GerenciamentoCategorias;
 import br.ufpr.rankeable.logica.Navegacao;
 import br.ufpr.rankeable.modelo.Categoria;
 import br.ufpr.rankeable.modelo.Rankeavel;
@@ -38,10 +40,10 @@ public class VotacaoController {
        //Rankeavel rankeavel = navegacao.getProximo();
         //model.addAttribute("rankeavel", rankeavel);
         
-        Categoria categoria = new Categoria();        
-        CRUDCategoria dbCategoria = new JdbcCategoriaDao();
+        CadastroCategorias dbCategoria = new GerenciamentoCategorias();  
+      //  CRUDCategoria dbCategoria = new JdbcCategoriaDao();
         //dbCategoria.adiciona(categoria);
-        List<Categoria> categorias = dbCategoria.lista();
+        List<Categoria> categorias = dbCategoria.listar();
         model.addAttribute("categorias", categorias );
 
                 //   List<Categoria> categorias = pegaCategorias.getCategorias();
