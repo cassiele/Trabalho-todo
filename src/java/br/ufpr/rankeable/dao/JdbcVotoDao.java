@@ -25,14 +25,14 @@ public class JdbcVotoDao implements CRUDVoto {
 
     @Override
     public void inserirVoto(Voto voto) {
-        String sql = "insert into voto " + "(id_categoria, voto, id_rankeavel) " + "values (???)";
+        String sql = "insert into voto " + "(id_categoria, id_rankeavel, voto) " + "values (?,?,?)";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1,voto.getCategoria().getId());
-            stmt.setInt(2,voto.getVoto());
-            stmt.setInt(3,voto.getRankeavel().getId());
-           
+            stmt.setInt(1, voto.getCategoria().getId());
+            stmt.setInt(2, voto.getRankeavel().getId());
+            stmt.setInt(3, voto.getVoto());            
+            
             stmt.execute();
             stmt.close();
 
@@ -41,8 +41,5 @@ public class JdbcVotoDao implements CRUDVoto {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-        
     }
-
-  
 }

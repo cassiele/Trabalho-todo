@@ -5,7 +5,10 @@
  */
 package br.ufpr.rankeable.controllers;
 
+import br.ufpr.rankeable.dao.CRUDCategoria;
+import br.ufpr.rankeable.dao.JdbcCategoriaDao;
 import br.ufpr.rankeable.logica.Navegacao;
+import br.ufpr.rankeable.modelo.Categoria;
 import br.ufpr.rankeable.modelo.Rankeavel;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Required;
@@ -33,11 +36,14 @@ public class VotacaoController {
         Rankeavel rankeavel = navegacao.getProximo();
         model.addAttribute("rankeavel", rankeavel);
         
+        Categoria categoria = new Categoria();        
+        CRUDCategoria dbCategoria = new JdbcCategoriaDao();
+        dbCategoria.adiciona(categoria);       
+        List<Categoria> categorias = dbCategoria.lista();
+        
      //   List<Categoria> categorias = pegaCategorias.getCategorias();
        // model.addAttribute("categorias",categorias);
         
         return "tela-principal";
     }
-    
-    
 }
