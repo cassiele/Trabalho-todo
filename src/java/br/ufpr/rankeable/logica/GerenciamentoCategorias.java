@@ -6,6 +6,7 @@
 package br.ufpr.rankeable.logica;
 
 import br.ufpr.rankeable.dao.CRUDCategoria;
+import br.ufpr.rankeable.dao.JdbcCategoriaDao;
 import br.ufpr.rankeable.modelo.Categoria;
 import java.util.List;
 
@@ -15,14 +16,16 @@ import java.util.List;
  */
 public class GerenciamentoCategorias implements PegaCategorias, CadastroCategorias {
     
-    private CRUDCategoria categoria;
-    
-    
+    private CRUDCategoria crudCategoria;
+
+    public GerenciamentoCategorias() {
+        crudCategoria = new JdbcCategoriaDao();
+    }
     
     @Override
     public List<Categoria> listar() {
         
-        List<Categoria> categorias = categoria.listar();
+        List<Categoria> categorias = crudCategoria.listar();
         return categorias;
     }
 
