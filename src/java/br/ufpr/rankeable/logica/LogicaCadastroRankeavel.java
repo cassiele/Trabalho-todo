@@ -26,11 +26,7 @@ public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,
     @Override
     public Iterable<Rankeavel> getRankeaveis() {
         
-        Rankeavel rankeavel = new Rankeavel();
-        
-        crudrankeavel.getCRUDRankeavel();
-        return null;
-       
+        return (Iterable<Rankeavel>) crudrankeavel.getCRUDRankeavel();     
     }
 
     @Override
