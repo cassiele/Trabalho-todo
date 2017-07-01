@@ -15,4 +15,6 @@ public interface CRUDVoto {
     
     void inserirVoto(Voto voto);
     
+    boolean jaExisteEsseVoto(Voto voto);
+    
 }
