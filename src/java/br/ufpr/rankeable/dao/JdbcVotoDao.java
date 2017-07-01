@@ -25,7 +25,7 @@ public class JdbcVotoDao implements CRUDVoto {
 
     @Override
     public void inserirVoto(Voto voto) {
-        String sql = "insert into voto " + "(id_categoria, voto, id_rankeavel) " + "values (???)";
+        String sql = "insert into voto " + "(id_categoria, voto, id_rankeavel) " + "values (?,?,?)";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);

@@ -31,17 +31,19 @@ public class teste {
         // Testa inserção de voto
         System.out.println("Iniciando inserção de votos...");
         Categoria categoria = new Categoria();
-        categoria.setNome("Inteligência");
+        categoria.setId(1);
+        categoria.setNome("Elegancia");
         CRUDCategoria dbCategoria = new JdbcCategoriaDao();
-        dbCategoria.adiciona(categoria);       
-        List<Categoria> categorias = dbCategoria.lista();
+//        dbCategoria.adiciona(categoria);       
+//        List<Categoria> categorias = dbCategoria.lista();
         
         
         Rankeavel rankeavel = new Rankeavel();
+        rankeavel.setId(1);        
         rankeavel.setNome("ogalo");
         CRUDRankeavel dbRankeavel = new JdbcRankeavelDao();
-        dbRankeavel.adiciona(rankeavel);
-        dbRankeavel.buscaPorId(rankeavel.getId());
+//        dbRankeavel.adiciona(rankeavel);
+//        dbRankeavel.buscaPorId(rankeavel.getId());
         
         Voto voto = new Voto(categoria, rankeavel);
         voto.setCategoria(categoria);
@@ -50,7 +52,7 @@ public class teste {
         CRUDVoto dbVoto = new JdbcVotoDao();
         dbVoto.inserirVoto(voto);       
         
-        System.out.println(voto.toString());        
+ //       System.out.println(voto.toString());        
         
         System.out.println("Encerrando inserção de votos...");        
     }    
