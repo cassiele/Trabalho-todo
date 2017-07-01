@@ -6,7 +6,9 @@
 package br.ufpr.rankeable.logica;
 
 import br.ufpr.rankeable.modelo.Rankeavel;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 
 /**
@@ -16,20 +18,32 @@ import java.util.List;
 public class LogicaFluxo implements Navegacao {
 
     private PegaRankeaveis pegadorDeRankeavel;
-    private List<Rankeavel> historico;
+    private LinkedList<Rankeavel> historico;
+    private Rankeavel atual;
     
     @Override
     public Rankeavel getProximo() {
-        //...
-        pegadorDeRankeavel.getRankeaveis();
-        return null;
+        
+        Random random = new Random();
+        int idRandomico;
+        
+        historico.addFirst(atual);
+        List<Rankeavel> rankeaveis = (List<Rankeavel>) pegadorDeRankeavel.getRankeaveis();
+        idRandomico = random.nextInt(rankeaveis.size());
+        atual = rankeaveis.get(idRandomico);
+        
+        return atual;
     }
+    
 
     @Override
     public Rankeavel getAnterior() {
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       atual = historico.getFirst();
+       historico.removeFirst();
+       return atual;
     }
+    
     
     
 }

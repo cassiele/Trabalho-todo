@@ -23,6 +23,11 @@ public class Rankeavel {
     
     ///getters e setters
 
+    public Rankeavel() {
+    }
+    
+    
+
     public int getId() {
         return id;
     }

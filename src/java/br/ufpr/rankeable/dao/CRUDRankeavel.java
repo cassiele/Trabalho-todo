@@ -6,6 +6,7 @@
 package br.ufpr.rankeable.dao;
 
 import br.ufpr.rankeable.modelo.Rankeavel;
+import java.util.List;
 
 /**
  *
@@ -19,7 +20,7 @@ public interface CRUDRankeavel {
 
     public Rankeavel buscaPorId(int id);
     
-    Rankeavel getCRUDRankeavel ();
+    List<Rankeavel> getRankeaveis();
     
     
 }
