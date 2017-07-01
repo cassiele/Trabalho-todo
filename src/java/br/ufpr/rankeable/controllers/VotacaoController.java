@@ -23,27 +23,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VotacaoController {
 
-    Navegacao navegacao;  //"setado" por injeção de dependência
+    //Navegacao navegacao;  //"setado" por injeção de dependência
     
     public VotacaoController() {
+        
     }
     public VotacaoController(Navegacao navegacao) {
+        
     }
      
     @RequestMapping("/telaVotacao")
     public String telaVotacao(Model model){
         
-        Rankeavel rankeavel = navegacao.getProximo();
-        model.addAttribute("rankeavel", rankeavel);
+       //Rankeavel rankeavel = navegacao.getProximo();
+        //model.addAttribute("rankeavel", rankeavel);
         
         Categoria categoria = new Categoria();        
         CRUDCategoria dbCategoria = new JdbcCategoriaDao();
-        dbCategoria.adiciona(categoria);       
+        //dbCategoria.adiciona(categoria);
         List<Categoria> categorias = dbCategoria.lista();
-        
-     //   List<Categoria> categorias = pegaCategorias.getCategorias();
+        model.addAttribute("categorias", categorias );
+
+                //   List<Categoria> categorias = pegaCategorias.getCategorias();
        // model.addAttribute("categorias",categorias);
         
-        return "tela-principal";
+        return "Votacao/tela-principal";
     }
 }
