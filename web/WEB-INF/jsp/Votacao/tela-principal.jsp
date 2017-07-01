@@ -1,5 +1,8 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +13,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-        <link rel="stylesheet" href="assets/css/styles.css">       
+        <link rel="stylesheet" href="/Votacao/assets/css/styles.css">       
     </head>
     <body>
         <h1> <%-- <a href="votar?id=${}" --%> </h1>
@@ -35,11 +38,11 @@
                 <div class="col-md-12">
                     <h2 class="text-left">Cassiele Thaís</h2>
                 </div>
-                <div class="col-md-9"><img class="img-thumbnail" src="assets/img/cassi.jpg" width="400px" height="500px"></div>
+                <div class="col-md-9"><img class="img-thumbnail" src="https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-9/18194729_1198445613614903_2889724023001505914_n.jpg?oh=2077a5e92b829d8e320fcb4b3ecca3fd&oe=59DCAD04" width="400px" height="500px"></div>
                 <div class="col-md-2" style="padding:0px;margin:0px;">
                     <div class="list-group">
-                                      <c:forEach var="categoria" items="${categorias}">
-                        <button class="list-group-item active"><span>${categoria.nome}</span></button>
+                           <c:forEach var="categoria" items="${categorias}">
+                        <button class="list-group-item"><span>${categoria.nome}</span></button>
                                       </c:forEach>
 
     <!--                <button class="list-group-item active"><span>Elegância </span></button>

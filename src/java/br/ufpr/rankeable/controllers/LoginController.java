@@ -28,7 +28,7 @@ public class LoginController {
 
     @RequestMapping("/votacao")
     public String votacao() {
-        return "/Votacao/tela-principal";
+        return "redirect:telaVotacao";
     }
     
     
@@ -36,7 +36,7 @@ public class LoginController {
     public String efetuaLogin(Usuario usuario, HttpSession session) throws SQLException {
         if (new JdbcUsuarioDao().existeUsuario(usuario)) {
             session.setAttribute("usuarioLogado", usuario.getNome());
-            return "/Votacao/tela-principal";    
+            return "redirect:telaVotacao";    
       
         }
         return "redirect:menu";
