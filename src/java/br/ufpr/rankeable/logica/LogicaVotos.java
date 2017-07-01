@@ -23,7 +23,7 @@ public class LogicaVotos implements InsercaoVotos{
     
 
     @Override
-    public void InsereVotos(Voto voto) {        
+    public void InsereVoto(Voto voto) {        
         crudVoto.inserirVoto(voto);        
     }
     

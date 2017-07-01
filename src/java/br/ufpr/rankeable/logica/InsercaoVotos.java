@@ -13,5 +13,6 @@ import br.ufpr.rankeable.modelo.Voto;
  */
 public interface InsercaoVotos {
     
-    void InsereVotos(Voto voto);
+    void InsereVoto(Voto voto);
+    
 }
