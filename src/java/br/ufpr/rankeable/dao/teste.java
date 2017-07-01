@@ -31,7 +31,7 @@ public class teste {
         // Testa inserção de voto
         System.out.println("Iniciando inserção de votos...");
         Categoria categoria = new Categoria();
-        categoria.setId(1);
+        categoria.setId(2);
         categoria.setNome("Elegancia");
         CRUDCategoria dbCategoria = new JdbcCategoriaDao();
 //        dbCategoria.adiciona(categoria);       
@@ -47,7 +47,7 @@ public class teste {
         
         Voto voto = new Voto(categoria, rankeavel);
         voto.setCategoria(categoria);
-        voto.setNota(1);
+        voto.setVoto(1);
         voto.setRankeavel(rankeavel);
         CRUDVoto dbVoto = new JdbcVotoDao();
         dbVoto.inserirVoto(voto);       

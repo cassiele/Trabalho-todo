@@ -52,7 +52,7 @@ public class Voto {
         this.categoria = categoria;
     }
 
-    public void setNota(int voto) {
+    public void setVoto(int voto) {
         this.voto = voto;
     }
 
