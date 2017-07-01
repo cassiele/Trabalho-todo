@@ -79,5 +79,10 @@ public class JdbcRankeavelDao implements CRUDRankeavel {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void getCRUDRankeavel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 

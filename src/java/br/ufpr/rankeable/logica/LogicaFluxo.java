@@ -28,6 +28,8 @@ public class LogicaFluxo implements Navegacao {
     @Override
     public Rankeavel getAnterior() {
         
+        
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

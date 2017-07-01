@@ -19,4 +19,7 @@ public interface CRUDRankeavel {
 
     public Rankeavel buscaPorId(int id);
     
+    void getCRUDRankeavel ();
+    
+    
 }
