@@ -5,6 +5,7 @@
  */
 package br.ufpr.rankeable.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,11 +18,14 @@ public class Rankeavel {
     private String nome;
     private String urlRedeSocial;
     private String foto;
-    private List<Circulo> circulos;
+    private ArrayList<Circulo> circulos = new ArrayList<Circulo>();
     
     ///getters e setters
 
+  
     public Rankeavel() {
+        this.circulos = circulos;
+        
     }
     
     
@@ -56,6 +60,15 @@ public class Rankeavel {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+    
+    public void setCirculo(Circulo circulo){
+        circulos.add(circulo);
+    }
+    
+    public void unSetCirculo(Circulo circulo){
+        circulos.remove(circulo);
+        
     }
     
 }

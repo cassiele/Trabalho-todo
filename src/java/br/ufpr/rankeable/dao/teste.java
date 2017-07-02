@@ -40,10 +40,14 @@ public class teste {
 //        List<Categoria> categorias = dbCategoria.lista();
 
         
-        
-//        Rankeavel rankeavel = new Rankeavel();
-//        rankeavel.setId(1);        
-//        rankeavel.setNome("ogalo");
+        Circulo circulo = new Circulo();
+        circulo.setId(1);
+        circulo.setNome("Palotina");
+        Rankeavel rankeavel = new Rankeavel();
+        rankeavel.setId(1);        
+        rankeavel.setNome("ogalo");
+        rankeavel.setCirculo(circulo);
+            
 //        CRUDRankeavel dbRankeavel = new JdbcRankeavelDao();
 //        dbRankeavel.adiciona(rankeavel);
 
@@ -69,5 +73,13 @@ public class teste {
               System.out.println((top10.get(i)).getRank());
               i++;
           }
+          
+          System.out.println("INICIANDO O TESTE DE CIRCULO ...");
+          CRUDCirculo teste = new JdbcCirculoDao();
+          teste.adiciona(circulo);
+          teste.vincularRankeavel(circulo, rankeavel);
+          System.out.println("FINALIZADO !");
+          
+          
     }    
 }

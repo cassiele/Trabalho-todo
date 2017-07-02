@@ -26,7 +26,7 @@ public class JdbcCirculoDao implements CRUDCirculo {
     
     @Override
     public void adiciona(Circulo circulo) {
-        String sql = "insert into circulo " + "(nome) " + "values (?)";
+        String sql = "insert into circulo (nome) values (?)";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -48,7 +48,7 @@ public class JdbcCirculoDao implements CRUDCirculo {
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setLong(1, circulo.getId());
+            stmt.setInt(1, circulo.getId());
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
@@ -78,12 +78,43 @@ public class JdbcCirculoDao implements CRUDCirculo {
 
     @Override
     public void vincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "insert into rankeavel_circulo (id_circulo, id_rankeavel) values (?, ?)";
+        
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, circulo.getId());
+            stmt.setInt(2, rankeavel.getId());
+           
+            stmt.execute();
+            stmt.close();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        
     }
 
     @Override
     public void desvincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "delete from rankeavel_circulo where (id_rankeavel, id_circulo) = (?, ?)";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, rankeavel.getId());
+            stmt.setInt(2, circulo.getId());
+            stmt.execute();
+            stmt.close();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        
+        rankeavel.unSetCirculo(circulo);
+        
+        
     }
     
     

@@ -15,31 +15,35 @@ import br.ufpr.rankeable.modelo.Rankeavel;
  */
 public class LogicaCirculo implements CadastroCirculo {
 
-    private CRUDCirculo circulo;
+    private CRUDCirculo crudCirculo;
+    
+    public LogicaCirculo(CRUDCirculo circulo){
+        this.crudCirculo = circulo;
+    }
     
     @Override
     public void adiciona(Circulo circulo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudCirculo.adiciona(circulo);
     }
 
     @Override
     public void remove(Circulo circulo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudCirculo.remove(circulo);
     }
 
     @Override
     public void altera(Circulo circulo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudCirculo.altera(circulo);
     }
 
     @Override
     public void vincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudCirculo.vincularRankeavel(circulo, rankeavel);
     }
 
     @Override
     public void desvincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudCirculo.desvincularRankeavel(circulo, rankeavel);
     }
     
 }

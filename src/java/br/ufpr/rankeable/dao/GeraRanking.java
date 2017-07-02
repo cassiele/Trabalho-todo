@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author cassiele
  */
-public interface GeraRanking {
+ public interface GeraRanking {
     List<Ranking> pegarTop10(int id);   
     
 }
