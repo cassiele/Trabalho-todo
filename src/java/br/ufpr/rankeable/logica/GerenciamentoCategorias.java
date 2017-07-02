@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author cassiele
+ * @author cassilene
  */
 public class GerenciamentoCategorias implements PegaCategorias, CadastroCategorias {
     
@@ -30,23 +30,23 @@ public class GerenciamentoCategorias implements PegaCategorias, CadastroCategori
     }
 
     @Override
-    public Categoria pegaCategoria() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Categoria pegaCategoria(int id) {
+        return crudCategoria.buscaPorId(id);
     }
 
     @Override
-    public void adicionaCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void adicionaCategoria(Categoria categoria) {   
+        crudCategoria.adiciona(categoria);
     }
 
     @Override
     public void removeCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudCategoria.remove(categoria);
     }
 
     @Override
     public void alteraCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudCategoria.altera(categoria);
     }
 
 

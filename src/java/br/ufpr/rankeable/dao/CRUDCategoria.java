@@ -13,6 +13,7 @@ import java.util.List;
  * @author cassiele
  */
 public interface CRUDCategoria {
+    
     public void adiciona(Categoria categoria);
     public void remove(Categoria categoria);
     public void altera(Categoria categoria);

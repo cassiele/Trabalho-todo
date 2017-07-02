@@ -6,6 +6,7 @@
 package br.ufpr.rankeable.logica;
 
 import br.ufpr.rankeable.modelo.Categoria;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 
 /**
  *
@@ -13,6 +14,6 @@ import br.ufpr.rankeable.modelo.Categoria;
  */
 public interface PegaCategorias {
     
-    Categoria pegaCategoria();
+    Categoria pegaCategoria(int id);
     
 }
