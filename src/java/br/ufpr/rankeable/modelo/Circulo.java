@@ -13,6 +13,11 @@ public class Circulo {
     private int id;
     private String nome;
 
+    public Circulo() {
+    }
+    
+    
+
     public int getId() {
         return id;
     }

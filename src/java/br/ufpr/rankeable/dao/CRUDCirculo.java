@@ -13,6 +13,7 @@ import br.ufpr.rankeable.modelo.Rankeavel;
  * @author ADILSON
  */
 public interface CRUDCirculo {
+    
     public void adiciona(Circulo circulo);
     public void remove(Circulo circulo);
     public void altera(Circulo circulo);

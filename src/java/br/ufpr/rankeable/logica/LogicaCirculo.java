@@ -5,35 +5,21 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.dao.CRUDCirculo;
 import br.ufpr.rankeable.modelo.Circulo;
 import br.ufpr.rankeable.modelo.Rankeavel;
-import br.ufpr.rankeable.dao.CRUDCirculo;
-import br.ufpr.rankeable.dao.JdbcCirculoDao;
 
 /**
  *
- * @author ADILSON
+ * @author cassiele
  */
 public class LogicaCirculo implements CadastroCirculo {
 
     private CRUDCirculo circulo;
- 
-    public LogicaCirculo() {
-   
-    }
     
-    public LogicaCirculo(CRUDCirculo circulo) {
-        this.circulo = circulo;
-    }
-    
-    public void Adiciona(Circulo circulo) {
-        adiciona(circulo);
-    }    
-    
-        
     @Override
     public void adiciona(Circulo circulo) {
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
