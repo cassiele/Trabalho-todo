@@ -5,10 +5,14 @@
  */
 package br.ufpr.rankeable.dao;
 
+import br.ufpr.rankeable.modelo.Ranking;
+import java.util.List;
+
 /**
  *
  * @author cassiele
  */
 public interface GeraRanking {
+    List<Ranking> pegarTop10(int id);   
     
 }

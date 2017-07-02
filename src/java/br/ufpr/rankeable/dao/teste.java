@@ -9,8 +9,10 @@ import br.ufpr.rankeable.jdbc.MysqlConnectionFactory;
 import br.ufpr.rankeable.modelo.Categoria;
 import br.ufpr.rankeable.modelo.Circulo;
 import br.ufpr.rankeable.modelo.Rankeavel;
+import br.ufpr.rankeable.modelo.Ranking;
 import br.ufpr.rankeable.modelo.Voto;
 import java.sql.Connection;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -29,32 +31,42 @@ public class teste {
 //        dbCirculo.adiciona(circulo);  
         
         // Testa inserção de voto
-        System.out.println("Iniciando inserção de votos...");
-        Categoria categoria = new Categoria();
-        categoria.setId(2);
-        categoria.setNome("Elegancia");
-        CRUDCategoria dbCategoria = new JdbcCategoriaDao();
+//        System.out.println("Iniciando inserção de votos...");
+//        Categoria categoria = new Categoria();
+//        categoria.setId(1);
+//        categoria.setNome("Elegancia");
+//        CRUDCategoria dbCategoria = new JdbcCategoriaDao();
 //        dbCategoria.adiciona(categoria);       
 //        List<Categoria> categorias = dbCategoria.lista();
         
         
-        Rankeavel rankeavel = new Rankeavel();
-        rankeavel.setId(1);        
-        rankeavel.setNome("ogalo");
-        CRUDRankeavel dbRankeavel = new JdbcRankeavelDao();
+//        Rankeavel rankeavel = new Rankeavel();
+//        rankeavel.setId(1);        
+//        rankeavel.setNome("ogalo");
+//        CRUDRankeavel dbRankeavel = new JdbcRankeavelDao();
 //        dbRankeavel.adiciona(rankeavel);
 //        dbRankeavel.buscaPorId(rankeavel.getId());
         
-        Voto voto = new Voto(categoria, rankeavel);
-        voto.setCategoria(categoria);
-        voto.setVoto(1);
-        voto.setRankeavel(rankeavel);
-        CRUDVoto dbVoto = new JdbcVotoDao();
-        dbVoto.inserirVoto(voto);       
+//        Voto voto = new Voto(categoria, rankeavel);
+//        voto.setCategoria(categoria);
+//        voto.setVoto(1);
+//        voto.setRankeavel(rankeavel);
+//        CRUDVoto dbVoto = new JdbcVotoDao();
+//        dbVoto.inserirVoto(voto);       
         
  //       System.out.println(voto.toString());        
         
-        System.out.println("Encerrando inserção de votos...");        
+//        System.out.println("Encerrando inserção de votos...");  
+
+          GeraRanking PegaRanking = new JdbcRankingDao();
+          List<Ranking> top10 = PegaRanking.pegarTop10(1);
+          Iterator it = top10.iterator();
+          System.out.println("ok");
+          int i = 0;
+          while(i < top10.size()){
+              System.out.println((top10.get(i)).getRank());
+              i++;
+          }
     }    
     
     
