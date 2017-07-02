@@ -38,30 +38,18 @@ public class teste {
 //        CRUDCategoria dbCategoria = new JdbcCategoriaDao();
 //        dbCategoria.adiciona(categoria);       
 //        List<Categoria> categorias = dbCategoria.lista();
-
-        
-        Circulo circulo = new Circulo();
-        circulo.setId(1);
-        circulo.setNome("Palotina");
-        Rankeavel rankeavel = new Rankeavel();
-        rankeavel.setId(1);        
-        rankeavel.setNome("ogalo");
-        rankeavel.setCirculo(circulo);
+      
             
 //        CRUDRankeavel dbRankeavel = new JdbcRankeavelDao();
 //        dbRankeavel.adiciona(rankeavel);
-
 //        dbRankeavel.buscaPorId(rankeavel.getId());
-        
 //        Voto voto = new Voto(categoria, rankeavel);
 //        voto.setCategoria(categoria);
 //        voto.setVoto(1);
 //        voto.setRankeavel(rankeavel);
 //        CRUDVoto dbVoto = new JdbcVotoDao();
 //        dbVoto.inserirVoto(voto);       
-        
- //       System.out.println(voto.toString());        
-        
+//       System.out.println(voto.toString());             
 //        System.out.println("Encerrando inserção de votos...");  
 
           GeraRanking PegaRanking = new JdbcRankingDao();
@@ -73,13 +61,5 @@ public class teste {
               System.out.println((top10.get(i)).getRank());
               i++;
           }
-          
-          System.out.println("INICIANDO O TESTE DE CIRCULO ...");
-          CRUDCirculo teste = new JdbcCirculoDao();
-          teste.adiciona(circulo);
-          teste.vincularRankeavel(circulo, rankeavel);
-          System.out.println("FINALIZADO !");
-          
-          
     }    
 }
