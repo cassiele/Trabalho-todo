@@ -5,10 +5,20 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.modelo.Rankeavel;
+import java.util.List;
+
 /**
  *
  * @author cassiele
  */
-public class LogicaRanking {
+public class LogicaRanking implements Rankear{
+    
+    Rankear rankear;
+
+    @Override
+    public List<Rankeavel> Top10() {
+        return rankear.Top10();
+    }
     
 }
