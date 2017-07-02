@@ -38,6 +38,7 @@ public class teste {
 //        CRUDCategoria dbCategoria = new JdbcCategoriaDao();
 //        dbCategoria.adiciona(categoria);       
 //        List<Categoria> categorias = dbCategoria.lista();
+
         
         
 //        Rankeavel rankeavel = new Rankeavel();
@@ -45,6 +46,7 @@ public class teste {
 //        rankeavel.setNome("ogalo");
 //        CRUDRankeavel dbRankeavel = new JdbcRankeavelDao();
 //        dbRankeavel.adiciona(rankeavel);
+
 //        dbRankeavel.buscaPorId(rankeavel.getId());
         
 //        Voto voto = new Voto(categoria, rankeavel);
@@ -68,6 +70,4 @@ public class teste {
               i++;
           }
     }    
-    
-    
 }

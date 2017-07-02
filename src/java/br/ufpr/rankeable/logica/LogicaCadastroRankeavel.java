@@ -8,6 +8,7 @@ package br.ufpr.rankeable.logica;
 import br.ufpr.rankeable.dao.CRUDRankeavel;
 import br.ufpr.rankeable.modelo.Circulo;
 import br.ufpr.rankeable.modelo.Rankeavel;
+import java.util.List;
 
 /**
  *
@@ -24,25 +25,22 @@ public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,
     
     
     @Override
-    public Iterable<Rankeavel> getRankeaveis() {
-        
-        Rankeavel rankeavel = new Rankeavel();
-        
-        crudrankeavel.getCRUDRankeavel();
-        return null;
-       
+    public List<Rankeavel> getRankeaveis() { 
+        return crudrankeavel.getRankeaveis();     
     }
 
     @Override
     public void adicionaRankeavel(Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudrankeavel.adiciona(rankeavel);
     }
 
     @Override
     public void removeRankeavel(Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        crudrankeavel.remove(rankeavel);
     }
 
+    
+    //Não feito no Dao ainda
     @Override
     public void alterarRankeavel(Rankeavel rankeavel) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -70,6 +68,11 @@ public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,
 
     @Override
     public void desvincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void solicitaRemocao(Rankeavel rankeavel) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

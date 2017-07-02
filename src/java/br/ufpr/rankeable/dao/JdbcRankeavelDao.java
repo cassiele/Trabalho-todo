@@ -11,6 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -81,8 +84,33 @@ public class JdbcRankeavelDao implements CRUDRankeavel {
     }
 
     @Override
-    public void getCRUDRankeavel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Rankeavel> getRankeaveis() {
+        
+            String sql = "select * from rankeaveis";
+            
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            List<Rankeavel> rankeaveis = new ArrayList<Rankeavel>();
+            while (rs.next()) {
+                Rankeavel rankeavel = new Rankeavel();
+                rankeavel.setId(rs.getInt("id"));
+                rankeavel.setNome("nome");
+                rankeavel.setUrlRedeSocial("urlRedeSocial");
+                rankeavel.setFoto("foto");
+             
+                rankeaveis.add(rankeavel);
+            }
+            stmt.close();
+            return rankeaveis;
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        
+        
+       
     }
 }
 

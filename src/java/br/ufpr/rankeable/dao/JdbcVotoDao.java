@@ -26,10 +26,9 @@ public class JdbcVotoDao implements CRUDVoto {
         
     @Override
     public void inserirVoto(Voto voto) {
-        
+        String sql = "insert into voto " + "(id_categoria, id_rankeavel, voto) " + "values (?,?,?)";
+
         try {
-            String sql;
-            
             if (this.jaExisteEsseVoto(voto)) {
                 sql = "update voto set voto=voto+1 where id = ?";
                 PreparedStatement stmtAtualiza = connection.prepareStatement(sql);
@@ -51,7 +50,6 @@ public class JdbcVotoDao implements CRUDVoto {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-        
     }
 
     @Override

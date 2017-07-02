@@ -17,5 +17,5 @@ public interface CRUDCategoria {
     public void remove(Categoria categoria);
     public void altera(Categoria categoria);
     public Categoria buscaPorId(int id);
-    public List<Categoria> lista();
+    public List<Categoria> listar();
 }

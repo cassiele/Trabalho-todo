@@ -21,15 +21,22 @@ public class LoginController {
         return "formulario-login";
     }
  
-    @RequestMapping("/menu")
-    public String menu() {
-        return "menu";
+//    @RequestMapping("/menu")
+//    public String menu() {
+//        return "menu";
+//    }
+
+    @RequestMapping("/votacao")
+    public String votacao() {
+        return "redirect:telaVotacao";
     }
+    
+    
     @RequestMapping("/efetuaLogin")
     public String efetuaLogin(Usuario usuario, HttpSession session) throws SQLException {
         if (new JdbcUsuarioDao().existeUsuario(usuario)) {
             session.setAttribute("usuarioLogado", usuario.getNome());
-            return "menu";    
+            return "redirect:telaVotacao";    
       
         }
         return "redirect:menu";

@@ -5,17 +5,50 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.dao.CRUDCategoria;
+import br.ufpr.rankeable.dao.JdbcCategoriaDao;
 import br.ufpr.rankeable.modelo.Categoria;
+import java.util.List;
 
 /**
  *
  * @author cassiele
  */
-public class GerenciamentoCategorias implements PegaCategorias {
+public class GerenciamentoCategorias implements PegaCategorias, CadastroCategorias {
+    
+    private CRUDCategoria crudCategoria;
+
+    public GerenciamentoCategorias() {
+        crudCategoria = new JdbcCategoriaDao();
+    }
+    
+    @Override
+    public List<Categoria> listar() {
+        
+        List<Categoria> categorias = crudCategoria.listar();
+        return categorias;
+    }
 
     @Override
     public Categoria pegaCategoria() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void adicionaCategoria(Categoria categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void removeCategoria(Categoria categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void alteraCategoria(Categoria categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
     
 }

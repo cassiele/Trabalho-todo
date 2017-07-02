@@ -17,6 +17,7 @@ public class Voto {
     private Rankeavel rankeavel;
 
     public Voto() {
+        
     }
 
     

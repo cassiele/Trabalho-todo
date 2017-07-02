@@ -5,7 +5,12 @@
  */
 package br.ufpr.rankeable.controllers;
 
+import br.ufpr.rankeable.dao.CRUDCategoria;
+import br.ufpr.rankeable.dao.JdbcCategoriaDao;
+import br.ufpr.rankeable.logica.CadastroCategorias;
+import br.ufpr.rankeable.logica.GerenciamentoCategorias;
 import br.ufpr.rankeable.logica.Navegacao;
+import br.ufpr.rankeable.modelo.Categoria;
 import br.ufpr.rankeable.modelo.Rankeavel;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Required;
@@ -20,24 +25,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VotacaoController {
 
-    Navegacao navegacao;  //"setado" por injeção de dependência
+    //Navegacao navegacao;  //"setado" por injeção de dependência
     
     public VotacaoController() {
+        
     }
     public VotacaoController(Navegacao navegacao) {
+        
     }
      
     @RequestMapping("/telaVotacao")
     public String telaVotacao(Model model){
         
-        Rankeavel rankeavel = navegacao.getProximo();
-        model.addAttribute("rankeavel", rankeavel);
+       //Rankeavel rankeavel = navegacao.getProximo();
+        //model.addAttribute("rankeavel", rankeavel);
         
-     //   List<Categoria> categorias = pegaCategorias.getCategorias();
+        CadastroCategorias dbCategoria = new GerenciamentoCategorias();  
+      //  CRUDCategoria dbCategoria = new JdbcCategoriaDao();
+        //dbCategoria.adiciona(categoria);
+        List<Categoria> categorias = dbCategoria.listar();
+        model.addAttribute("categorias", categorias );
+
+                //   List<Categoria> categorias = pegaCategorias.getCategorias();
        // model.addAttribute("categorias",categorias);
         
-        return "tela-principal";
+        return "Votacao/tela-principal";
     }
-    
-    
 }

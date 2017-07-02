@@ -100,7 +100,7 @@ public class JdbcCategoriaDao implements CRUDCategoria {
         }
     }
     
-    public List<Categoria> lista() {
+    public List<Categoria> listar() {
         String sql = "select * from categoria";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
