@@ -12,7 +12,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-
 /**
  *
  * @author cassi
@@ -22,30 +21,30 @@ public class LogicaFluxo implements Navegacao {
     private PegaRankeaveis pegadorDeRankeavel;
     private LinkedList<Rankeavel> historico;
     private Rankeavel atual;
-    
+
+    public LogicaFluxo() {
+        historico = new LinkedList<Rankeavel>();
+        pegadorDeRankeavel = new LogicaCadastroRankeavel();
+    }
+ 
     @Override
     public Rankeavel getProximo() {
-        
+
         Random random = new Random();
-        int idRandomico;        
-//        historico.addFirst(atual);
-//        List<Rankeavel> rankeaveis = (List<Rankeavel>) pegadorDeRankeavel.getRankeaveis();
-        CRUDRankeavel dao = new JdbcRankeavelDao();
-        List<Rankeavel> rankeaveis = dao.getRankeaveis();
+        int idRandomico;
+        historico.addFirst(atual);
+        List<Rankeavel> rankeaveis = (List<Rankeavel>) pegadorDeRankeavel.getRankeaveis();
         idRandomico = random.nextInt(rankeaveis.size());
-        atual = rankeaveis.get(idRandomico);        
+         atual = rankeaveis.get(idRandomico);   
         return atual;
     }
-    
 
     @Override
     public Rankeavel getAnterior() {
-        
-       atual = historico.getFirst();
-       historico.removeFirst();
-       return atual;
+
+        atual = historico.getFirst();
+        historico.removeFirst();
+        return atual;
     }
-    
-    
-    
+
 }

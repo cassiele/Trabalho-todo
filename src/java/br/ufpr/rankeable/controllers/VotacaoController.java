@@ -33,46 +33,54 @@ public class VotacaoController {
 
     Navegacao navegacao = new LogicaFluxo();
     Rankeavel rankeavel;
-    
+
     public VotacaoController() {
-        
+
     }
+
     public VotacaoController(Navegacao navegacao) {
-        
+
     }
-     
+
     @RequestMapping("/telaVotacao")
-    public String telaVotacao(Model model){       
-        CadastroCategorias dbCategoria = new GerenciamentoCategorias();  
+    public String telaVotacao(Model model) {
+        CadastroCategorias dbCategoria = new GerenciamentoCategorias();
         List<Categoria> categorias = dbCategoria.listar();
-        model.addAttribute("categorias", categorias );      
+        model.addAttribute("categorias", categorias);
         return "Votacao/tela-principal";
     }
-       
+
     @RequestMapping("/insereVoto")
-    public String insereVoto(Categoria categoria) {   
-
-        Rankeavel rankeavel = new Rankeavel();
-        rankeavel.setId(1);
-        rankeavel.setNome("Cassi");
-
+    public String insereVoto(Categoria categoria, HttpSession session) {
+        Rankeavel rankeval = new Rankeavel();
+        rankeavel.setId((int) session.getAttribute("id_rankeavel"));
+        rankeavel.setNome((String) session.getAttribute("nome_rankeavel"));
         Voto voto = new Voto(categoria, rankeavel);
         voto.setVoto(1);
         voto.setCategoria(categoria);
         voto.setRankeavel(rankeavel);
-        
+
         CRUDVoto dbVoto = new JdbcVotoDao();
-        dbVoto.inserirVoto(voto);          
+        dbVoto.inserirVoto(voto);
         return "redirect:telaVotacao";
     }
-    
+
     @RequestMapping("/getRandom")
-    public String getRandom(HttpSession session){
+    public String getRandom(HttpSession session) {
         rankeavel = navegacao.getProximo();
-        session.setAttribute("id_rankeavel",rankeavel.getId());
-        session.setAttribute("nome_rankeavel",rankeavel.getNome());
-        session.setAttribute("url_rankeavel",rankeavel.getUrlRedeSocial());
-       return "/index";
+        session.setAttribute("id_rankeavel", rankeavel.getId());
+        session.setAttribute("nome_rankeavel", rankeavel.getNome());
+        session.setAttribute("url_rankeavel", rankeavel.getUrlRedeSocial());
+        return "redirect:telaVotacao";
     }
-    
+
+    @RequestMapping("/getBack")
+    public String getBack(HttpSession session) {
+        rankeavel = navegacao.getAnterior();
+        session.setAttribute("id_rankeavel", rankeavel.getId());
+        session.setAttribute("nome_rankeavel", rankeavel.getNome());
+        session.setAttribute("url_rankeavel", rankeavel.getUrlRedeSocial());
+        return "redirect:telaVotacao";
+    }
+
 }

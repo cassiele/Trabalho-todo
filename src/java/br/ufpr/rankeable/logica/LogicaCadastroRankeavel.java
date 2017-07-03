@@ -6,6 +6,7 @@
 package br.ufpr.rankeable.logica;
 
 import br.ufpr.rankeable.dao.CRUDRankeavel;
+import br.ufpr.rankeable.dao.JdbcRankeavelDao;
 import br.ufpr.rankeable.modelo.Circulo;
 import br.ufpr.rankeable.modelo.Rankeavel;
 import java.util.List;
@@ -20,6 +21,7 @@ public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,
     
 
     public LogicaCadastroRankeavel() {
+       crudrankeavel = new JdbcRankeavelDao();
     }
     
     

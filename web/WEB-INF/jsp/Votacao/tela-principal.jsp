@@ -32,9 +32,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-left">Cassiele Thaís</h2>
+                    <h2 class="text-left">${nome_rankeavel}</h2>
                 </div>
-                <div class="col-md-9"><img class="img-thumbnail" src="https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-9/18194729_1198445613614903_2889724023001505914_n.jpg?oh=2077a5e92b829d8e320fcb4b3ecca3fd&oe=59DCAD04" width="400px" height="500px"></div>
+                <div class="col-md-9"><img class="img-thumbnail" src="${url_rankeavel}" width="400px" height="500px"></div>
                 <div class="col-md-2" style="padding:0px;margin:0px;">
                     
                     <div class="list-group">
@@ -50,8 +50,8 @@
                         <div class="col-md-9">
                             <div class="btn-toolbar">
                                 <div class="btn-group" role="group">
-                                    <button class="btn btn-default" type="button">Anterior</button>
-                                    <button class="btn btn-default" type="button">Próximo</button>
+                                    <a class="btn btn-default" role="button" href="getBack">Anterior</a>
+                                    <a class="btn btn-default" role="button" href="getRandom">Proximo</a>
                                 </div>
                             </div>
                         </div>
