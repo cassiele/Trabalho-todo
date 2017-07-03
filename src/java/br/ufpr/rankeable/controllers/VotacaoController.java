@@ -71,6 +71,7 @@ public class VotacaoController {
         rankeavel = navegacao.getProximo();
         session.setAttribute("id_rankeavel",rankeavel.getId());
         session.setAttribute("nome_rankeavel",rankeavel.getNome());
+        session.setAttribute("url_rankeavel",rankeavel.getUrlRedeSocial());
        return "/index";
     }
     
