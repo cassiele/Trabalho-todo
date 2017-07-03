@@ -13,22 +13,30 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-        <link rel="stylesheet" href="/Votacao/assets/css/styles.css">       
+        <link rel="stylesheet" href="/Votacao/assets/css/styles.css">    
+        
+        <style type="text/css">
+            
+        </style>
+        
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
+       <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Rankeables </a>
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="telaVotacao">Rankeables </a>
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active" role="presentation"><a href="RankingList">Top 10</a></li>
+                        <li role="presentation"><a href="telaVotacao">Home</a></li>
+                        <li role="presentation"><a href="rankeavelform">+1 Rankeavel</a></li>                        
+                        <li role="presentation"><a href="RankingList">TOP 10</a></li>
                         <li role="presentation"><a href="logout">Logout</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
