@@ -5,6 +5,8 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.dao.CRUDRankeavel;
+import br.ufpr.rankeable.dao.JdbcRankeavelDao;
 import br.ufpr.rankeable.modelo.Rankeavel;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,13 +27,13 @@ public class LogicaFluxo implements Navegacao {
     public Rankeavel getProximo() {
         
         Random random = new Random();
-        int idRandomico;
-        
-        historico.addFirst(atual);
-        List<Rankeavel> rankeaveis = (List<Rankeavel>) pegadorDeRankeavel.getRankeaveis();
+        int idRandomico;        
+//        historico.addFirst(atual);
+//        List<Rankeavel> rankeaveis = (List<Rankeavel>) pegadorDeRankeavel.getRankeaveis();
+        CRUDRankeavel dao = new JdbcRankeavelDao();
+        List<Rankeavel> rankeaveis = dao.getRankeaveis();
         idRandomico = random.nextInt(rankeaveis.size());
-        atual = rankeaveis.get(idRandomico);
-        
+        atual = rankeaveis.get(idRandomico);        
         return atual;
     }
     

@@ -86,7 +86,7 @@ public class JdbcRankeavelDao implements CRUDRankeavel {
     @Override
     public List<Rankeavel> getRankeaveis() {
         
-        String sql = "select * from rankeaveis";
+        String sql = "select * from rankeavel";
             
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -95,9 +95,9 @@ public class JdbcRankeavelDao implements CRUDRankeavel {
             while (rs.next()) {
                 Rankeavel rankeavel = new Rankeavel();
                 rankeavel.setId(rs.getInt("id"));
-                rankeavel.setNome("nome");
-                rankeavel.setUrlRedeSocial("urlRedeSocial");
-                rankeavel.setFoto("foto");
+                rankeavel.setNome(rs.getString("nome"));
+                rankeavel.setUrlRedeSocial(rs.getString("urlRedeSocial"));
+                rankeavel.setFoto(rs.getString("foto"));
              
                 rankeaveis.add(rankeavel);
             }

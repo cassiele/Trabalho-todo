@@ -5,6 +5,7 @@
  */
 package br.ufpr.rankeable.controllers;
 
+import br.ufpr.rankeable.dao.GeraRanking;
 import br.ufpr.rankeable.dao.JdbcRankingDao;
 import br.ufpr.rankeable.dao.JdbcUsuarioDao;
 import br.ufpr.rankeable.logica.CadastroCategorias;
@@ -27,10 +28,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RankingCrontroller {
 
     @RequestMapping("/Top10")
-    public String listar(Categoria categoria, Model model) {
-        JdbcRankingDao dao = new JdbcRankingDao();
+    public String listar(Categoria categoria, Model model, HttpSession session) {
+        GeraRanking dao = new JdbcRankingDao();
         List<Ranking> ranking = dao.pegarTop10(categoria.getId());
         model.addAttribute("ranking", ranking);
+        session.setAttribute("CategoriaNome", categoria.getNome());
         return "ranking";
     }
 
@@ -39,7 +41,7 @@ public class RankingCrontroller {
         CadastroCategorias dbCategoria = new GerenciamentoCategorias(); 
         List<Categoria> categorias = dbCategoria.listar();
         model.addAttribute("categorias", categorias );
-        return "/rankinglist";
+        return "/rankinlist";
 
     }
 
