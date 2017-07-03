@@ -34,7 +34,7 @@
                 <div class="col-md-12">
                     <h2 class="text-left">${nome_rankeavel}</h2>
                 </div>
-                <div class="col-md-9"><img class="img-thumbnail" src="${url_rankeavel}" width="400px" height="500px"></div>
+                <div class="col-md-9"><img class="img-thumbnail" src="${foto}" width="400px" height="500px"></div>
                 <div class="col-md-2" style="padding:0px;margin:0px;">
                     
                     <div class="list-group">

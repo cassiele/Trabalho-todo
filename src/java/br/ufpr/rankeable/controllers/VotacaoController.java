@@ -72,7 +72,7 @@ public class VotacaoController {
         rankeavel = navegacao.getProximo();
         session.setAttribute("id_rankeavel", rankeavel.getId());
         session.setAttribute("nome_rankeavel", rankeavel.getNome());
-        session.setAttribute("url_rankeavel", rankeavel.getUrlRedeSocial());
+        session.setAttribute("foto", rankeavel.getFoto());
         return "redirect:telaVotacao";
     }
 
@@ -81,7 +81,7 @@ public class VotacaoController {
         rankeavel = navegacao.getAnterior();
         session.setAttribute("id_rankeavel", rankeavel.getId());
         session.setAttribute("nome_rankeavel", rankeavel.getNome());
-        session.setAttribute("url_rankeavel", rankeavel.getUrlRedeSocial());
+        session.setAttribute("foto", rankeavel.getFoto());
         return "redirect:telaVotacao";
     }
 
