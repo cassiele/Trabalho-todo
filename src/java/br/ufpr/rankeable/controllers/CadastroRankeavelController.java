@@ -30,12 +30,9 @@ public class CadastroRankeavelController {
     
     @RequestMapping("/cadastroRankeavel")
     public String cadastroRankeavel(Rankeavel rankeavel, HttpSession session){
-        //LogicaCadastroRankeavel logicaCadastroRankeavel = new LogicaCadastroRankeavel();
-        //logicaCadastroRankeavel.adicionaRankeavel(rankeavel);
-        
-        JdbcRankeavelDao jdbcRankeavelDao = new JdbcRankeavelDao();
-        jdbcRankeavelDao.adiciona(rankeavel);
-        
+        LogicaCadastroRankeavel logicaCadastroRankeavel = new LogicaCadastroRankeavel();
+        logicaCadastroRankeavel.adicionaRankeavel(rankeavel);
+    
         return "redirect:telaVotacao";
     }
     
