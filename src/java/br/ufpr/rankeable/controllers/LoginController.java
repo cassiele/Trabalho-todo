@@ -36,7 +36,7 @@ public class LoginController {
     public String efetuaLogin(Usuario usuario, HttpSession session) throws SQLException {
         if (new JdbcUsuarioDao().existeUsuario(usuario)) {
             session.setAttribute("usuarioLogado", usuario.getNome());
-            return "redirect:telaVotacao";    
+            return "redirect:getRandom";    
       
         }
         return "redirect:menu";
