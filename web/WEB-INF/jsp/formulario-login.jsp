@@ -31,7 +31,7 @@
         <div class="row">
             <div class="jumbotron topo">
                 <h1>Rankeables</h1>
-                <p>Rankeamento de usuários do Facebook por categoras</p>
+                <p>Rankeamento de usuários do Facebook por categorias</p>
             </div>
         </div>
     </div>
