@@ -17,4 +17,5 @@ public interface CRUDUsuario {
     boolean existeUsuario(Usuario usuario) throws SQLException;
     void alteraUsuario(Usuario usuario);
     void removeUsuario(Usuario usuario);
+    void adicionaUsuario(Usuario usuario);
 }

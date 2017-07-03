@@ -60,4 +60,24 @@ public class JdbcUsuarioDao implements CRUDUsuario {
     public void removeUsuario(Usuario usuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
+
+    @Override
+    public void adicionaUsuario(Usuario usuario) {
+        String sql = "insert into usuario " + "(nome,senha,perfil) " + "values (?,?,?)";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, usuario.getNome());
+            stmt.setString(2, usuario.getSenha());
+            stmt.setString(3, usuario.getPerfil());
+           
+            stmt.execute();
+            stmt.close();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+    }
