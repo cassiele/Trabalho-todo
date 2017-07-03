@@ -16,9 +16,6 @@
         <link rel="stylesheet" href="/Votacao/assets/css/styles.css">       
     </head>
     <body>
-        <h1> <%-- <a href="votar?id=${}" --%> </h1>
-        <a href="logout">Sair do sistema</a>
-        
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Rankeables </a>
@@ -26,9 +23,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active" role="presentation"><a href="#">First Item</a></li>
-                        <li role="presentation"><a href="#">Second Item</a></li>
-                        <li role="presentation"><a href="#">Third Item</a></li>
+                        <li class="active" role="presentation"><a href="RankingList">Top 10</a></li>
+                        <li role="presentation"><a href="logout">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,18 +42,7 @@
                                 <a class="list-group-item" href="insereVoto?id=${categoria.id}">
                                 <span>${categoria.id} - <span>${categoria.nome}</span>
                             </a>
-                        </c:forEach>
-
-                        
-                        
-                        <!--                <button class="list-group-item active"><span>Elegância </span></button>
-                        <button class="list-group-item"><span>Inteligência</span></button>
-                        <button class="list-group-item"><span>Beleza</span></button>
-                        <button class="list-group-item"><span>Simpatia</span></button>
-                        <button class="list-group-item"><span>- </span></button>
-                        <button class="list-group-item"><span>- </span></button>
-                        <button class="list-group-item"><span>- </span></button>
-     -->                
+                        </c:forEach>             
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -65,12 +50,8 @@
                         <div class="col-md-9">
                             <div class="btn-toolbar">
                                 <div class="btn-group" role="group">
-                                    <button class="btn btn-default" type="button">Button 1</button>
-                                    <button class="btn btn-default" type="button">Button 2</button>
-                                </div>
-                                <div class="btn-group" role="group">
-                                    <button class="btn btn-default" type="button">Button 1</button>
-                                    <button class="btn btn-default" type="button">Button 2</button>
+                                    <button class="btn btn-default" type="button">Anterior</button>
+                                    <button class="btn btn-default" type="button">Próximo</button>
                                 </div>
                             </div>
                         </div>

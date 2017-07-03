@@ -41,7 +41,7 @@ public class RankingCrontroller {
         CadastroCategorias dbCategoria = new GerenciamentoCategorias(); 
         List<Categoria> categorias = dbCategoria.listar();
         model.addAttribute("categorias", categorias );
-        return "/rankinlist";
+        return "/rankinglist";
 
     }
 
