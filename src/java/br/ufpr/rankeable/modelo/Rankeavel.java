@@ -18,6 +18,7 @@ public class Rankeavel {
     private String nome;
     private String urlRedeSocial;
     private String foto;
+    private List<Voto> votos;
     private ArrayList<Circulo> circulos = new ArrayList<Circulo>();
     
     ///getters e setters
