@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author cassiele
  */
-public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,CadastroRankeavel,CadastroCirculo{
+public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,CadastroRankeavel{
 
     private CRUDRankeavel crudrankeavel;
     
@@ -48,30 +48,6 @@ public class LogicaCadastroRankeavel implements PegaRankeaveis,SolicitarRemocao,
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void adiciona(Circulo circulo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void remove(Circulo circulo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void altera(Circulo circulo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void vincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void desvincularRankeavel(Circulo circulo, Rankeavel rankeavel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public void solicitaRemocao(Rankeavel rankeavel) {
