@@ -26,7 +26,7 @@ public class JdbcVotoDao implements CRUDVoto {
         
     @Override
     public void inserirVoto(Voto voto) {
-        String sql = "insert into voto " + "(id_categoria, id_rankeavel, voto) " + "values (?,?,?)";
+        String sql;
 
         try {
             if (this.jaExisteEsseVoto(voto)) {

@@ -86,7 +86,7 @@ public class JdbcRankeavelDao implements CRUDRankeavel {
     @Override
     public List<Rankeavel> getRankeaveis() {
         
-            String sql = "select * from rankeaveis";
+        String sql = "select * from rankeaveis";
             
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -108,9 +108,6 @@ public class JdbcRankeavelDao implements CRUDRankeavel {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-        
-        
-       
     }
 }
 

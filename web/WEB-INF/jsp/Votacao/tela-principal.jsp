@@ -40,12 +40,17 @@
                 </div>
                 <div class="col-md-9"><img class="img-thumbnail" src="https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-9/18194729_1198445613614903_2889724023001505914_n.jpg?oh=2077a5e92b829d8e320fcb4b3ecca3fd&oe=59DCAD04" width="400px" height="500px"></div>
                 <div class="col-md-2" style="padding:0px;margin:0px;">
+                    
                     <div class="list-group">
-                           <c:forEach var="categoria" items="${categorias}">
-                        <button class="list-group-item"><span>${categoria.nome}</span></button>
-                                      </c:forEach>
+                        <c:forEach var="categoria" items="${categorias}">
+                                <a class="list-group-item" href="insereVoto?id=${categoria.id}">
+                                <span>${categoria.id} - <span>${categoria.nome}</span>
+                            </a>
+                        </c:forEach>
 
-    <!--                <button class="list-group-item active"><span>Elegância </span></button>
+                        
+                        
+                        <!--                <button class="list-group-item active"><span>Elegância </span></button>
                         <button class="list-group-item"><span>Inteligência</span></button>
                         <button class="list-group-item"><span>Beleza</span></button>
                         <button class="list-group-item"><span>Simpatia</span></button>
@@ -53,7 +58,7 @@
                         <button class="list-group-item"><span>- </span></button>
                         <button class="list-group-item"><span>- </span></button>
      -->                
-                                    </div>
+                    </div>
                 </div>
                 <div class="col-md-12">
                     <div class="row">

@@ -20,6 +20,9 @@ public class LogicaVotos implements InsercaoVotos{
     public LogicaVotos(CRUDVoto voto) {
         this.crudVoto = voto;
     }
+
+    public LogicaVotos() {
+    }
     
 
     @Override
