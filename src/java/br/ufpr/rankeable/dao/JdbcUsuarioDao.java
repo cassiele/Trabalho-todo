@@ -63,7 +63,7 @@ public class JdbcUsuarioDao implements CRUDUsuario {
 
     @Override
     public void adicionaUsuario(Usuario usuario) {
-        String sql = "insert into usuario " + "(nome,senha,perfil) " + "values (?,?,?)";
+        String sql = "insert into usuarios " + "(nome, senha, perfil) " + "values (?,?,?)";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);

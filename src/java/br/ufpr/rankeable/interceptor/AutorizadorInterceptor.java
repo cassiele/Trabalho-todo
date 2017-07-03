@@ -17,8 +17,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
             HttpServletResponse response,
             Object controller) throws Exception {
         String uri = request.getRequestURI();
-        if (uri.endsWith("/loginForm")
-                || uri.endsWith("/efetuaLogin")
+        if (uri.endsWith("/loginForm") || uri.endsWith("/efetuaLogin") || uri.endsWith("/usuarioform")
                 || uri.contains("/resources")) {
             return true;
         }

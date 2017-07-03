@@ -30,7 +30,7 @@ public class CadastroUsuarioController {
         LogicaCadastroUsuario logicaCadastroUsuario = new LogicaCadastroUsuario();
         logicaCadastroUsuario.adicionaUsuario(usuario);     
     
-        return "redirect:telaLogin";
+        return "redirect:loginForm";
     }
     
 }

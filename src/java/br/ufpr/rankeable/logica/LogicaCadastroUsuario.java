@@ -23,7 +23,7 @@ public class LogicaCadastroUsuario implements CadastroUsuario{
     
     @Override
     public void adicionaUsuario(Usuario usuario){
-        
+        crudusuario.adicionaUsuario(usuario);
     }
 
     @Override
