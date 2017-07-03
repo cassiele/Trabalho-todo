@@ -5,7 +5,10 @@
  */
 package br.ufpr.rankeable.logica;
 
+import br.ufpr.rankeable.dao.GeraRanking;
+import br.ufpr.rankeable.dao.JdbcRankingDao;
 import br.ufpr.rankeable.modelo.Rankeavel;
+import br.ufpr.rankeable.modelo.Ranking;
 import java.util.List;
 
 /**
@@ -14,11 +17,15 @@ import java.util.List;
  */
 public class LogicaRanking implements Rankear{
     
-    Rankear rankear;
+    GeraRanking rankear;
+
+    public LogicaRanking() {
+        rankear = new JdbcRankingDao();
+    }
 
     @Override
-    public List<Rankeavel> Top10() {
-        return rankear.Top10();
+    public List<Ranking> Top10(int id) {
+        return rankear.pegarTop10(id);
     }
     
 }

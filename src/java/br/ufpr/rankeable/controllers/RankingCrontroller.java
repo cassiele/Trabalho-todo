@@ -10,6 +10,8 @@ import br.ufpr.rankeable.dao.JdbcRankingDao;
 import br.ufpr.rankeable.dao.JdbcUsuarioDao;
 import br.ufpr.rankeable.logica.CadastroCategorias;
 import br.ufpr.rankeable.logica.GerenciamentoCategorias;
+import br.ufpr.rankeable.logica.LogicaRanking;
+import br.ufpr.rankeable.logica.Rankear;
 import br.ufpr.rankeable.modelo.Categoria;
 import br.ufpr.rankeable.modelo.Ranking;
 import br.ufpr.rankeable.modelo.Usuario;
@@ -29,8 +31,8 @@ public class RankingCrontroller {
 
     @RequestMapping("/Top10")
     public String listar(Categoria categoria, Model model, HttpSession session) {
-        GeraRanking dao = new JdbcRankingDao();
-        List<Ranking> ranking = dao.pegarTop10(categoria.getId());
+        Rankear top10 = new LogicaRanking();
+        List<Ranking> ranking = top10.Top10(categoria.getId());
         model.addAttribute("ranking", ranking);
         session.setAttribute("CategoriaNome", categoria.getNome());
         return "ranking";

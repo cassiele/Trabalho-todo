@@ -17,11 +17,8 @@ public class LogicaVotos implements InsercaoVotos{
     
     private CRUDVoto crudVoto;
 
-    public LogicaVotos(CRUDVoto voto) {
-        this.crudVoto = voto;
-    }
-
     public LogicaVotos() {
+        crudVoto = new JdbcVotoDao();
     }
     
 

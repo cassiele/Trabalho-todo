@@ -6,6 +6,7 @@
 package br.ufpr.rankeable.logica;
 
 import br.ufpr.rankeable.modelo.Rankeavel;
+import br.ufpr.rankeable.modelo.Ranking;
 import java.util.List;
 
 /**
@@ -14,5 +15,5 @@ import java.util.List;
  */
 public interface Rankear {
     
-    List<Rankeavel> Top10();
+    List<Ranking> Top10(int id);
 }

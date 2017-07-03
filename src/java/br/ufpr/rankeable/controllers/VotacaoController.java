@@ -11,6 +11,7 @@ import br.ufpr.rankeable.dao.JdbcCategoriaDao;
 import br.ufpr.rankeable.dao.JdbcVotoDao;
 import br.ufpr.rankeable.logica.CadastroCategorias;
 import br.ufpr.rankeable.logica.GerenciamentoCategorias;
+import br.ufpr.rankeable.logica.InsercaoVotos;
 import br.ufpr.rankeable.logica.LogicaFluxo;
 import br.ufpr.rankeable.logica.LogicaVotos;
 import br.ufpr.rankeable.logica.Navegacao;
@@ -52,7 +53,6 @@ public class VotacaoController {
 
     @RequestMapping("/insereVoto")
     public String insereVoto(Categoria categoria, HttpSession session) {
-        Rankeavel rankeval = new Rankeavel();
         rankeavel.setId((int) session.getAttribute("id_rankeavel"));
         rankeavel.setNome((String) session.getAttribute("nome_rankeavel"));
         Voto voto = new Voto(categoria, rankeavel);
@@ -60,8 +60,10 @@ public class VotacaoController {
         voto.setCategoria(categoria);
         voto.setRankeavel(rankeavel);
 
-        CRUDVoto dbVoto = new JdbcVotoDao();
-        dbVoto.inserirVoto(voto);
+//        CRUDVoto dbVoto = new JdbcVotoDao();
+//        dbVoto.inserirVoto(voto);
+        InsercaoVotos saveVoto = new LogicaVotos();
+        saveVoto.InsereVoto(voto);
         return "redirect:telaVotacao";
     }
 

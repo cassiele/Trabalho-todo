@@ -27,6 +27,7 @@ public class JdbcRankingDao implements GeraRanking {
         connection = (new MysqlConnectionFactory()).getConnection();
     }
 
+
     @Override
     public List<Ranking> pegarTop10(int id) {
         String sql = "SELECT categoria.nome, voto.voto, rankeavel.nome as rank, rankeavel.foto as foto, rankeavel.urlRedeSocial from voto inner join rankeavel ON rankeavel.id = voto.id_rankeavel inner join categoria on categoria.id = voto.id_categoria WHERE id_categoria = ? AND voto <= (SELECT max(voto) FROM voto) ORDER BY voto DESC LIMIT 10;";        
