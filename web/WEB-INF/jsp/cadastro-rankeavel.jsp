@@ -20,7 +20,7 @@
         <link rel="StyleSheet" type="text/css" href="jsp/styles.css" media="screen" >
         
         <style type="text/css">
-            .input500px {
+            .largura500px {
                 width: 500px;
             }
         </style>
@@ -50,30 +50,32 @@
                     <form action="cadastroRankeavel" method="post">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Adiciona +1 Rankeavel</strong></h3></div>
-                                <div class="panel-body">
-                                    <fieldset>
-                                        <legend>Nome</legend>
-                                        <input class="input500px" type="text" name="nome" />
-                                    </fieldset>
-                                    <hr>
-                                    <fieldset>
-                                        <legend>URL Facebook</legend>
-                                        <input class="input500px" type="text" name="urlRedeSocial" />
-                                    </fieldset>
-                                    <hr>
-                                    <fieldset>
-                                        <legend>URL Foto</legend>
-                                        <input class="input500px" type="text" name="foto" />
-                                    </fieldset>
-                                </div>
-                                <div class="panel-footer">
-                                    <input class="btn btn-primary" type="submit" value="Adicionar" />                            
-                                </div>
+                                <h3 class="panel-title"><strong>Adiciona +1 Rankeavel</strong></h3>
                             </div>
-                        </form>                                        
-                    </div>
+                            <div class="panel-body">
+                                <fieldset>
+                                    <legend>Nome</legend>
+                                    <input class="largura500px" type="text" name="nome" />
+                                </fieldset>
+                                <hr>
+                                <fieldset>
+                                    <legend>URL Facebook</legend>
+                                    <input class="largura500px" type="text" name="urlRedeSocial" />
+                                </fieldset>
+                                <hr>
+                                <fieldset>
+                                    <legend>URL Foto</legend>
+                                    <input class="largura500px" type="text" name="foto" />
+                                </fieldset>
+                            </div>
+                            <div class="panel-footer">
+                                <input class="btn btn-primary" type="submit" value="Adicionar" />                            
+                            </div>
+                        </div>
+                    </form>                                        
                 </div>
+            </div>
+        </div>
                 <!--<h2>Página de cadastro </h2>-->
                 <!--<form action="cadastroRankeavel" method="post">-->
                     <!--Nome do Rankeavel: <input type="text" name="nome" /> <br />--> 
@@ -81,8 +83,6 @@
                     <!--Foto: <input type="text" name="foto"/> <br />-->
                     <!--<input type="submit" value="Efetuar Cadastro" />-->
                 <!--</form>-->
-            </div>
-        </div>
         
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
